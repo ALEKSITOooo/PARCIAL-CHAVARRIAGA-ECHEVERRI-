@@ -1,0 +1,20 @@
+def realizar_operacion(operacion):
+    try:
+        num1 = float(entry_num1.get())
+        num2 = float(entry_num2.get())
+        resultado = ""
+
+        if operacion == "suma":
+            resultado = num1 + num2
+        elif operacion == "resta":
+            resultado = num1 - num2
+        elif operacion == "multiplicacion":
+            resultado = num1 * num2
+        elif operacion == "division":
+            resultado = num1 / num2  # Se debe manejar la división por cero
+        # Falta implementar potencia aquí
+       label_resultado.config(text="Resultado: " + str(resultado))
+    except ValueError:
+        messagebox.showerror("Error", "Por favor, ingresa números válidos.")
+    except ZeroDivisionError:
+        messagebox.showerror("Error", "División por cero no permitida.")
